@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		body {
+		font-family: "Lato", sans-serif;
+		}
+		.sidenav {
+		height: 60%;
+		min-height: 250px;
+		width: 5px;
+		position: fixed;
+		z-index: 1;
+		top: 20%;
+		left: 0;
+		background-color: red;
+		overflow-x: hidden;
+		transition: 0.5s;
+		}
+		.sidenav:hover{
+			width: 100px;
+		}
+		.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+		}
+		.sidenav a:hover {
+		color: #f1f1f1;
+		}
+		.sidenav .buttons {
+		position: absolute;
+		right: 25px;
+		}
+		@media screen and (max-height: 450px) {
+		.sidenav {top: 0px;}
+		.sidenav a {font-size: 12px;}
+		}
+		</style>
+	</head>
+	<body onload="checkCookie()">
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="buttons" onclick="closeNav()">&times;</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="javascript:addTextSize()" onclick="addTextSize()">About</a>
+			<a href="javascript:removeTextSize()" onclick="removeTextSize()">Contact</a>
+		</div>
+		<!-- <h2>Animated Sidenav Example</h2>
+		<p>Click on the element below to open the side navigation menu.</p>
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+		-->
+		<p id="myP">This is a paragraph.</p>
+		<p id="random">Some motherfuckine text</p>
+		<span id="random">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+		<script>
+		function addTextSize() {
+			var el = document.getElementById("myP");
+			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+			var fontSize = parseFloat(style);
+			// now you have a proper float for the font size (yes, it can be a float, not just an integer)
+			el.style.fontSize = (fontSize + 1) + 'px';
+			setCookie(style);
+		}
+		function removeTextSize() {
+			var el = document.getElementById("myP");
+			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+			var fontSize = parseFloat(style);
+			// now you have a proper float for the font size (yes, it can be a float, not just an integer)
+			el.style.fontSize = (fontSize - 1) + 'px';
+			setCookie(style);
+			/*document.getElementById("myP").style.fontSize = computedFontSize + 1 + "px";*/
+		}
+		function setCookie(cvalue) {
+			var d = new Date();
+			var cname = "test"
+			d.setTime(d.getTime() + (30*24*60*60*1000));
+			var expires = "expires=" + d.toGMTString();
+			var test = cname + "=" + cvalue + ";" + expires + ";path=/";
+			alert("You added a cookie" + test);
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+		function checkCookie() {
+			var user=getCookie("test");
+			if (user != "") {
+				alert("Welcome again " + user);
+			}
+		}
+		</script>
+		
+	</body>
+</html>
