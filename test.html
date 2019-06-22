@@ -62,28 +62,26 @@
 			var el = document.getElementById("myP");
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
-			// now you have a proper float for the font size (yes, it can be a float, not just an integer)
 			el.style.fontSize = (fontSize + 1) + 'px';
-			setCookie(style);
+			setCookie(fontSize);
 		}
 		function removeTextSize() {
 			var el = document.getElementById("myP");
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
-			// now you have a proper float for the font size (yes, it can be a float, not just an integer)
 			el.style.fontSize = (fontSize - 1) + 'px';
-			setCookie(style);
-			/*document.getElementById("myP").style.fontSize = computedFontSize + 1 + "px";*/
+			setCookie(fontSize);
 		}
+
 		function setCookie(cvalue) {
 			var d = new Date();
 			var cname = "test"
 			d.setTime(d.getTime() + (30*24*60*60*1000));
 			var expires = "expires=" + d.toGMTString();
 			var test = cname + "=" + cvalue + ";" + expires + ";path=/";
-			alert("You added a cookie" + test);
 			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;";
 		}
+
 		function getCookie(cname) {
 			var name = cname + "=";
 			var decodedCookie = decodeURIComponent(document.cookie);
@@ -106,7 +104,6 @@
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
 			if (user != "") {
-				alert("Welcome again " + user);
 				el.style.fontSize = user;
 			}
 		}
