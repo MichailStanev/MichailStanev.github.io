@@ -102,8 +102,12 @@
 
 		function checkCookie() {
 			var user=getCookie("test");
+			var el = document.getElementById("myP");
+			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+			var fontSize = parseFloat(style);
 			if (user != "") {
 				alert("Welcome again " + user);
+				el.style.fontSize = user;
 			}
 		}
 		</script>
