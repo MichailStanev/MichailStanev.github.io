@@ -91,7 +91,7 @@
 			var user=getCookie("test");
 			var font = parseFloat(user);
 			console.log(font);
-			if (font == NaN) {
+			if (Number.isNaN(font)) {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
 				    TextElements[i].style.fontSize = 21 + 'px';
 				    setCookie(21);
