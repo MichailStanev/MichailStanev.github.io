@@ -45,10 +45,9 @@
 	<body onload="checkCookie()">
 
 		<div id="mySidenav" class="sidenav">
-<!-- 			<a href="javascript:void(0)" class="buttons" onclick="closeNav()">&times;</a> -->
-			<a href="javascript:addTextSize()" onclick="addTextSize()"><img src="images/plus.png"></a>
-			<a href="javascript:undoTextSize()" onclick="undoTextSize()"><img src="images/undo.png"></a>
-			<a href="javascript:removeTextSize()" onclick="removeTextSize()"><img src="images/minus.png"></a>
+			<a href="javascript:addTextSize()" onclick="addTextSize()">1</a>
+			<a href="javascript:undoTextSize()" onclick="undoTextSize()">2</a>
+			<a href="javascript:removeTextSize()" onclick="removeTextSize()">3</a>
 		</div>
 		<!-- <h2>Animated Sidenav Example</h2>
 		<p>Click on the element below to open the side navigation menu.</p>
@@ -58,8 +57,7 @@
 			<p class="something" name="testing">This is a paragraph.</p>
 			<p class="something" name="testing">Some motherfuckine text</p>
 		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
 		<script>
 		function addTextSize() {
 			var TextElements = document.getElementsByClassName("something");
@@ -80,12 +78,6 @@
 				    setCookie(21);
 				}
 			}
-			/*for (var i = 0, max = TextElements.length; i < max; i++) {
-				var style = window.getComputedStyle(TextElements[i] , null).getPropertyValue('fontSize');
-				var fontSize = parseFloat(TextElements[i]);
-				console.log(fontSize);
-			}
-			setCookie(fontSize);*/
 		}
 
 		function undoTextSize() {
