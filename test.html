@@ -43,28 +43,59 @@
 		</style>
 	</head>
 	<body onload="checkCookie()">
+
 		<div id="mySidenav" class="sidenav">
-			<a href="javascript:void(0)" class="buttons" onclick="closeNav()">&times;</a>
-			<a href="#">Services</a>
-			<a href="#">Clients</a>
-			<a href="javascript:addTextSize()" onclick="addTextSize()">About</a>
-			<a href="javascript:removeTextSize()" onclick="removeTextSize()">Contact</a>
+<!-- 			<a href="javascript:void(0)" class="buttons" onclick="closeNav()">&times;</a> -->
+			<a href="javascript:addTextSize()" onclick="addTextSize()"><img src="images/plus.png"></a>
+			<a href="javascript:undoTextSize()" onclick="undoTextSize()"><img src="images/undo.png"></a>
+			<a href="javascript:removeTextSize()" onclick="removeTextSize()"><img src="images/minus.png"></a>
 		</div>
 		<!-- <h2>Animated Sidenav Example</h2>
 		<p>Click on the element below to open the side navigation menu.</p>
 		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 		-->
-		<p id="myP">This is a paragraph.</p>
-		<p id="random">Some motherfuckine text</p>
-		<span id="random">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+		<div id="teasdasdsting">
+			<p class="something" name="testing">This is a paragraph.</p>
+			<p class="something" name="testing">Some motherfuckine text</p>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
 		function addTextSize() {
+			var TextElements = document.getElementsByClassName("something");
+			console.log(TextElements.length);
+
+			if (getCookie("test")) {
+				console.log("true exmalp")
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+					var style = window.getComputedStyle(TextElements[i] , null).getPropertyValue('fontSize');
+					var fontSize = getCookie"test";
+					console.log(fontSize +  style);
+				    TextElements[i].style.fontSize = (fontSize + 1) + 'px';
+				    setCookie(fontSize);
+				}
+			}else{
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = 21 + 'px';
+				    setCookie(21);
+				}
+			}
+			/*for (var i = 0, max = TextElements.length; i < max; i++) {
+				var style = window.getComputedStyle(TextElements[i] , null).getPropertyValue('fontSize');
+				var fontSize = parseFloat(TextElements[i]);
+				console.log(fontSize);
+			}
+			setCookie(fontSize);*/
+		}
+
+		function undoTextSize() {
 			var el = document.getElementById("myP");
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
-			el.style.fontSize = (fontSize + 1) + 'px';
+			el.style.fontSize = 20 + 'px';
 			setCookie(fontSize);
 		}
+
 		function removeTextSize() {
 			var el = document.getElementById("myP");
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
@@ -108,6 +139,5 @@
 			}
 		}
 		</script>
-		
 	</body>
 </html>
