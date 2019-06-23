@@ -90,7 +90,7 @@
 			var TextElements = document.getElementsByClassName("something");
 			var user=getCookie("test");
 			console.log(user);
-			if (user != null) {
+			if (user == null) {
 				TextElements[i].style.fontSize = (user + 1) + 'px';
 			    setCookie(user+1);
 			}
