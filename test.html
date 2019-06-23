@@ -91,12 +91,15 @@
 			var user=getCookie("test");
 			console.log(user);
 			if (user == null) {
-				TextElements[i].style.fontSize = (user + 1) + 'px';
-			    setCookie(user+1);
-			}
-			for (var i = 0, max = TextElements.length; i < max; i++) {
-			    TextElements[i].style.fontSize = 21 + 'px';
-			    setCookie(21);
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = 21 + 'px';
+				    setCookie(21);
+				}
+			}else{
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = (user + 1) + 'px';
+			    	setCookie(user+1);
+				}
 			}
 		}
 
