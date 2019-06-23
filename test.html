@@ -89,17 +89,18 @@
 		function addTextSize(){
 			var TextElements = document.getElementsByClassName("something");
 			var user=getCookie("test");
-			var fontSize = parseFloat(user);
+			var font = parseFloat(user);
 			console.log(fontSize);
-			if (fontSize == null) {
+			if (font == null) {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
 				    TextElements[i].style.fontSize = 21 + 'px';
 				    setCookie(21);
 				}
 			}else{
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = (fontSize + 1) + 'px';
-			    	setCookie(fontSize+1);
+					font = font + 1;
+				    TextElements[i].style.fontSize = font + 'px';
+			    	setCookie(font);
 				}
 			}
 		}
