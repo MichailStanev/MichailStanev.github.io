@@ -106,19 +106,30 @@
 		}
 
 		function undoTextSize() {
-			var el = document.getElementById("myP");
-			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
-			var fontSize = parseFloat(style);
-			el.style.fontSize = 20 + 'px';
-			setCookie(fontSize);
+			var TextElements = document.getElementsByClassName("something");
+			for (var i = 0, max = TextElements.length; i < max; i++) {
+			    TextElements[i].style.fontSize = 20 + 'px';
+			    setCookie(20);
+			}
 		}
 
 		function removeTextSize() {
-			var el = document.getElementById("myP");
-			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
-			var fontSize = parseFloat(style);
-			el.style.fontSize = (fontSize - 1) + 'px';
-			setCookie(fontSize);
+			var TextElements = document.getElementsByClassName("something");
+			var user=getCookie("test");
+			var font = parseFloat(user);
+			console.log(font);
+			if (Number.isNaN(font)) {
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = 19 + 'px';
+				    setCookie(19);
+				}
+			}else{
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+					font = font - 1;
+				    TextElements[i].style.fontSize = font + 'px';
+			    	setCookie(font);
+				}
+			}
 		}
 
 		function setCookie(cvalue) {
