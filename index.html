@@ -6,78 +6,136 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		body {
+		font-family: "Lato", sans-serif;
+		}
+		.sidenav {
+		height: 20%;
+		min-height: 250px;
+		width: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		background-color: #414141;
+		overflow-x: hidden;
+		transition: 0.5s;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		flex-direction : column;
+		-webkit-clip-path: polygon(60% 0, 100% 20%, 100% 80%, 60% 100%, 0 100%, 0 0);
+		clip-path: polygon(60% 0, 100% 20%, 100% 80%, 60% 100%, 0 100%, 0 0);
+		}
+		.sidenav:hover{
+			width: 100px;
+		}
+		.sidenav:hover a{
+			display: inline;
+		}
+		.sidenav a {
+		max-width: 50%
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+		display: none;
+		}
+		.sidenav a:hover {
+		color: #f1f1f1;
+		}
+		.sidenav{
+		position: absolute;
+		right: 25px;
+		}
+		@media screen and (max-height: 450px) {
+		.sidenav {top: 0px;}
+		.sidenav a {font-size: 12px;}
+		}
+		</style>
 	</head>
-	<body class="is-preload">
 
+	<body class="is-preload">
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:addTextSize()" onclick="addTextSize()">
+				<img src="images/plus.png" alt="plus" class="inline"/>
+			</a>
+			<a href="javascript:undoTextSize()" onclick="undoTextSize()">
+				<img src="images/undo.png" alt="plus" class="inline"/>
+			</a>
+			<a href="javascript:removeTextSize()" onclick="removeTextSize()">
+				<img src="images/minus.png" alt="plus" class="inline"/>
+			</a>
+		</div>
 		<!-- Header -->
-			<section id="header">
-				<header>
-					<h1>Michail Stanev</h1>
-					<p>My portfolio</p>
-				</header>
-				
-				<ul class="icons" style="padding-bottom:2em;">
-				<li><a href="https://www.facebook.com/mihail.stanev.3" class="icon fa-facebook"><span class="label">Facebook</span></a></li>	
+		<section id="header">
+			<header>
+				<h1>Michail Stanev</h1>
+				<p>My portfolio</p>
+			</header>
+			
+			<ul class="icons" style="padding-bottom:2em;">
+				<li><a href="https://www.facebook.com/mihail.stanev.3" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 				<li><a href="mailto:MichailStanev@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				<li><a href="https://github.com/MichailStanev" class="icon fa-github"><span class="label">Github</span></a></li>
 				<li><a href="https://www.linkedin.com/in/michail-stenev-b9109211a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				</ul>
-				
-				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">About me</a>
-				</footer>
-			</section>
-
+			</ul>
+			
+			<footer>
+				<a href="#banner" class="button style2 scrolly-middle">About me</a>
+			</footer>
+		</section>
 		<!-- Banner -->
-			<section id="banner">
-				<header>
-					<h2>Hello i am Michail Stanev</h2>
-				</header>
-				<p>I am in my last year of my bachelor's degree in computer science <br />
+		<section id="banner">
+			<header>
+				<h2>Hello i am Michail Stanev</h2>
+			</header>
+			<p>I am in my last year of my bachelor's degree in computer science <br />
 				and i am pursuing an opportunity to begin a career as a backend developer.
-				</p>
-				<footer>
-					<a href="#first" class="button style2 scrolly">My skills</a>
-				</footer>
-			</section>
-
+			</p>
+			<footer>
+				<a href="#first" class="button style2 scrolly">My skills</a>
+			</footer>
+		</section>
 		<!-- Feature 1 -->
-			<article id="first" class="container box style1 right">
-				<!--
-				<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-				
-				<div class="relative" >					
+		<article id="first" class="container box style1 right">
+			<!--
+			<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+			
+								<div class="relative" >
 					<img class="image fit" src="images/pic01.jpg" alt="" />
 					<p class="absolute-text1">Frontend development</a> </p>
-				</div>
-				-->
-				<div class="image">
-					<img class="image fit" src="images/frontend.jpg" alt="" />
-
-					<h21 style="font-size: 22pt; color: rgb(255,255,255)" >
-					Frontend skills</h2>
-				</div>
-				
-				<div class="inner" style="hight: 100%">
-					<p> HTML <br/>
-						CSS <br/>
-						JavaScript <br/>
-					</p>
-				</div>
-			</article>
-
+			</div>
+			-->
+			<div class="image">
+				<img class="image fit" src="images/frontend.jpg" alt="" />
+				<h21 style="font-size: 22pt; color: rgb(255,255,255)" >
+				Frontend skills</h2>
+			</div>
+			
+			<div class="inner" style="hight: 100%">
+				<p> HTML <br/>
+					CSS <br/>
+					JavaScript <br/>
+				</p>
+			</div>
+		</article>
 		<!-- Feature 2 -->
-			<article class="container box style1 left">
-				<!--<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>-->
-				
-				<div class="image">
-					<img class="image fit" src="images/backend.jpg" alt="" />
-
-					<h21 style="font-size: 22pt; color: rgb(255,255,255); " >
-					Backend skills</h2>
-				</div>
-				
-				<div class="inner" style="hight: 100%">
+		<article class="container box style1 left">
+			<!--<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>-->
+			
+			<div class="image">
+				<img class="image fit" src="images/backend.jpg" alt="" />
+				<h21 style="font-size: 22pt; color: rgb(255,255,255); " >
+				Backend skills</h2>
+			</div>
+			
+			<div class="inner" style="hight: 100%">
 				<p> C++ <br/>
 					MySQL <br/>
 					Java <br/>
@@ -85,14 +143,13 @@
 					Android Development <br/>
 				</p>
 			</div>
-			</article>
+		</article>
 		
 		<!-- Feature 3 -->
 		<article id="first" class="container box style1 right">
 			
 			<div class="image">
 				<img class="image fit" src="images/other-skills.jpg" alt="" />
-
 				<h21 style="font-size: 22pt; color: rgb(255,255,255)" >
 				Other skills</h2>
 			</div>
@@ -106,30 +163,112 @@
 			</div>
 			
 		</article>
-
 		
 		<section id="footer">
 			<ul class="icons">
-				<li><a href="https://www.facebook.com/mihail.stanev.3" class="icon fa-facebook"><span class="label">Facebook</span></a></li>	
+				<li><a href="https://www.facebook.com/mihail.stanev.3" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 				<li><a href="mailto:MichailStanev@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				<li><a href="https://github.com/MichailStanev" class="icon fa-github"><span class="label">Github</span></a></li>
 				<li><a href="https://www.linkedin.com/in/michail-stenev-b9109211a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				</ul>
+			</ul>
 			<div class="copyright">
 				<ul class="menu">
 					<li>Contact me at: <a href="mailto:MichailStanev@gmail.com">MichailStanev@gmail.com</a></li>
 				</ul>
 			</div>
 		</section>
-
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script>
+		function addTextSize(){
+			var TextElements = document.getElementsByClassName("something");
+			var user=getCookie("test");
+			var font = parseFloat(user);
+			console.log(font);
+			if (Number.isNaN(font)) {
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = 21 + 'px';
+				    setCookie(21);
+				}
+			}else{
+				font = font + 1;
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = font + 'px';
+			    	setCookie(font);
+				}
+			}
+		}
 
+		function undoTextSize() {
+			var TextElements = document.getElementsByClassName("something");
+			for (var i = 0, max = TextElements.length; i < max; i++) {
+			    TextElements[i].style.fontSize = 20 + 'px';
+			    setCookie(20);
+			}
+		}
+
+		function removeTextSize() {
+			var TextElements = document.getElementsByClassName("something");
+			var user=getCookie("test");
+			var font = parseFloat(user);
+			console.log(font);
+			if (Number.isNaN(font)) {
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = 19 + 'px';
+				    setCookie(19);
+				}
+			}else{
+				font = font - 1;
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = font + 'px';
+			    	setCookie(font);
+				}
+			}
+		}
+
+		function setCookie(cvalue) {
+			var d = new Date();
+			var cname = "test"
+			d.setTime(d.getTime() + (30*24*60*60*1000));
+			var expires = "expires=" + d.toGMTString();
+			var test = cname + "=" + cvalue + ";" + expires + ";path=/";
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;";
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+		function checkCookie() {
+			var user=getCookie("test");
+			var el = document.getElementById("myP");
+			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
+			var fontSize = parseFloat(style);
+			var TextElements = document.getElementsByClassName("something");
+			if (user != "") {
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = user + 'px';
+				}
+			}
+		}
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
