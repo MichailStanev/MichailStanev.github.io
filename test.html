@@ -165,7 +165,9 @@
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
 			if (user != "") {
-				el.style.fontSize = user + "px";
+				for (var i = 0, max = TextElements.length; i < max; i++) {
+				    TextElements[i].style.fontSize = user + 'px';
+				}
 			}
 		}
 		</script>
