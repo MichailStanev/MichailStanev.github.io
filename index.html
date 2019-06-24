@@ -295,9 +295,6 @@
 		}
 		function checkCookie() {
 			var user=getCookie("test");
-			var el = document.getElementById("myP");
-			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
-			var fontSize = parseFloat(style);
 			var TextElements = document.getElementsByClassName("dynamicTextSize");
 			if (user != "") {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
