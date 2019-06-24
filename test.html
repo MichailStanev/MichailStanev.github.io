@@ -9,7 +9,7 @@
 		.sidenav {
 		height: 60%;
 		min-height: 250px;
-		width: 5px;
+		width: 10px;
 		top: 20%;
 		position: fixed;
 		z-index: 1;
@@ -42,7 +42,7 @@
 		.sidenav a:hover {
 		color: #f1f1f1;
 		}
-		.sidenav .buttons {
+		.sidenav{
 		position: absolute;
 		right: 25px;
 		}
@@ -65,43 +65,12 @@
 			<img src="images/minus.png" alt="plus" class="inline"/>
 			</a>
 		</div>
-		<!-- <h2>Animated Sidenav Example</h2>
-		<p>Click on the element below to open the side navigation menu.</p>
-		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-		-->
-		<div id="teasdasdsting">
+		<div>
 			<p class="something" id="myP" name="testing">This is a paragraph.</p>
 			<p class="something" id="myP" name="testing">Some motherfuckine text</p>
 		</div>
 
 		<script>
-		/*function addTextSize() {
-			var TextElements = document.getElementsByClassName("something");
-			console.log(TextElements.length);
-
-			if (getCookie("test")) {
-				console.log("true exmalp")
-				for (var i = 0, max = TextElements.length; i < max; i++) {
-					var style = window.getComputedStyle(TextElements[i] , null).getPropertyValue('fontSize');
-					var fontSize = getCookie("test");
-					console.log(fontSize +  style);
-				    TextElements[i].style.fontSize = (fontSize + 1) + 'px';
-				    setCookie(fontSize);
-				}
-			}else{
-				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = 21 + 'px';
-				    setCookie(21);
-				}
-			}
-		}*/
-			/*for (var i = 0, max = TextElements.length; i < max; i++) {
-				var style = window.getComputedStyle(TextElements[i] , null).getPropertyValue('fontSize');
-				var fontSize = parseFloat(TextElements[i]);
-				console.log(fontSize);
-			}
-			setCookie(fontSize);
-		}*/
 		function addTextSize(){
 			var TextElements = document.getElementsByClassName("something");
 			var user=getCookie("test");
