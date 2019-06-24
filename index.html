@@ -10,13 +10,12 @@
 		body {
 		font-family: "Lato", sans-serif;
 		}
-		.sidenav {
-		height: 20%;
+		.sidenava {
+		position: fixed;
+		height: 60%;
 		min-height: 250px;
 		width: 10px;
-		top: 50%;
-		transform: translateY(-50%);
-		position: fixed;
+		bottom: 20%;
 		z-index: 1;
 		left: 0;
 		background-color: #414141;
@@ -30,13 +29,13 @@
 		-webkit-clip-path: polygon(60% 0, 100% 20%, 100% 80%, 60% 100%, 0 100%, 0 0);
 		clip-path: polygon(60% 0, 100% 20%, 100% 80%, 60% 100%, 0 100%, 0 0);
 		}
-		.sidenav:hover{
+		.sidenava:hover{
 			width: 100px;
 		}
-		.sidenav:hover a{
+		.sidenava:hover a{
 			display: inline;
 		}
-		.sidenav a {
+		.sidenava a {
 		max-width: 50%
 		padding: 8px 8px 8px 32px;
 		text-decoration: none;
@@ -46,22 +45,21 @@
 		transition: 0.3s;
 		display: none;
 		}
-		.sidenav a:hover {
+		.sidenava a:hover {
 		color: #f1f1f1;
 		}
-		.sidenav{
-		position: absolute;
+		.sidenava{
+		position: fixed;
 		right: 25px;
 		}
 		@media screen and (max-height: 450px) {
-		.sidenav {top: 0px;}
-		.sidenav a {font-size: 12px;}
+		.sidenava {top: 0px;}
+		.sidenava a {font-size: 12px;}
 		}
 		</style>
 	</head>
-
 	<body class="is-preload">
-		<div id="mySidenav" class="sidenav">
+		<div id="mySidenav" class="sidenava">
 			<a href="javascript:addTextSize()" onclick="addTextSize()">
 				<img src="images/plus.png" alt="plus" class="inline"/>
 			</a>
@@ -108,8 +106,8 @@
 			<a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
 			
 								<div class="relative" >
-					<img class="image fit" src="images/pic01.jpg" alt="" />
-					<p class="absolute-text1">Frontend development</a> </p>
+								<img class="image fit" src="images/pic01.jpg" alt="" />
+								<p class="absolute-text1">Frontend development</a> </p>
 			</div>
 			-->
 			<div class="image">
@@ -161,7 +159,34 @@
 					Wordpress <br/>
 				</p>
 			</div>
-			
+		</article>
+		<article class="container box style3">
+			<section>
+				<header>
+					<h2 class="dynamicTextSize">Simple Tasker</h2>
+					<p class="dynamicTextSize">Status: <span class="dynamicTextSize" style="color: red">to be released</span></p>
+					<a href="https://github.com/MichailStanev/SimpleTasker" class="icon fa-github"><span class="label">Github</span></a>
+				</header>
+				<p class="dynamicTextSize">This is an android based project that aims to simplify the automation of day to day tasks, using the google awareness API and 
+				MongoDB stitch. The main objective of the app is to allow the user to create both simple and complex tasks.The phone does an action (Put phone is silent mode or send user a reminder), based on gps coordinates, specific time or during some activity(running, walking, etc)</p>
+
+				<p class="dynamicTextSize">What is implemented at the moment:</p>
+				<ul>
+					<li class="dynamicTextSize">Connection to the MongoDB database</li>
+					<li class="dynamicTextSize">The BroadcastReciever that listens for activation or deactivation of specific fence</li>
+					<li class="dynamicTextSize">Creation of a geoFence</li>
+					<li class="dynamicTextSize">Action to mute/unmute phone on geoFence trigger</li>
+				</ul>
+
+				<p class="dynamicTextSize">What is planned to be implemented in the future:</p>
+				<ul>
+					<li class="dynamicTextSize">Action activate/disable wi-fy/mobileData</li>
+					<li class="dynamicTextSize">Action giving user reminders based on fence responce</li>
+					<li class="dynamicTextSize">Creation of time fences</li>
+					<li class="dynamicTextSize">Creation of action fences (running, walking, stationary, in a car, driving)</li>
+					<li class="dynamicTextSize">Combination of multiple fences</li>
+				</ul>
+			</section>
 		</article>
 		
 		<section id="footer">
@@ -180,51 +205,48 @@
 		<!-- Scripts -->
 		<script>
 		function addTextSize(){
-			var TextElements = document.getElementsByClassName("something");
+			var TextElements = document.getElementsByClassName("dynamicTextSize");
 			var user=getCookie("test");
 			var font = parseFloat(user);
 			console.log(font);
 			if (Number.isNaN(font)) {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = 21 + 'px';
-				    setCookie(21);
+				TextElements[i].style.fontSize = 21 + 'px';
+				setCookie(21);
 				}
 			}else{
 				font = font + 1;
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = font + 'px';
-			    	setCookie(font);
+				TextElements[i].style.fontSize = font + 'px';
+				setCookie(font);
 				}
 			}
 		}
-
 		function undoTextSize() {
-			var TextElements = document.getElementsByClassName("something");
+			var TextElements = document.getElementsByClassName("dynamicTextSize");
 			for (var i = 0, max = TextElements.length; i < max; i++) {
-			    TextElements[i].style.fontSize = 20 + 'px';
-			    setCookie(20);
+			TextElements[i].style.fontSize = 20 + 'px';
+			setCookie(20);
 			}
 		}
-
 		function removeTextSize() {
-			var TextElements = document.getElementsByClassName("something");
+			var TextElements = document.getElementsByClassName("dynamicTextSize");
 			var user=getCookie("test");
 			var font = parseFloat(user);
 			console.log(font);
 			if (Number.isNaN(font)) {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = 19 + 'px';
-				    setCookie(19);
+				TextElements[i].style.fontSize = 19 + 'px';
+				setCookie(19);
 				}
 			}else{
 				font = font - 1;
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = font + 'px';
-			    	setCookie(font);
+				TextElements[i].style.fontSize = font + 'px';
+				setCookie(font);
 				}
 			}
 		}
-
 		function setCookie(cvalue) {
 			var d = new Date();
 			var cname = "test"
@@ -233,7 +255,6 @@
 			var test = cname + "=" + cvalue + ";" + expires + ";path=/";
 			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;";
 		}
-
 		function getCookie(cname) {
 			var name = cname + "=";
 			var decodedCookie = decodeURIComponent(document.cookie);
@@ -249,16 +270,15 @@
 			}
 			return "";
 		}
-
 		function checkCookie() {
 			var user=getCookie("test");
 			var el = document.getElementById("myP");
 			var style = window.getComputedStyle(el, null).getPropertyValue('font-size');
 			var fontSize = parseFloat(style);
-			var TextElements = document.getElementsByClassName("something");
+			var TextElements = document.getElementsByClassName("dynamicTextSize");
 			if (user != "") {
 				for (var i = 0, max = TextElements.length; i < max; i++) {
-				    TextElements[i].style.fontSize = user + 'px';
+				TextElements[i].style.fontSize = user + 'px';
 				}
 			}
 		}
