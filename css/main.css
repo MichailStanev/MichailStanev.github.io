@@ -1,9 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Raleway&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  --body-background: #FCFCFC;
+  --container-background: #EBEBEB;
+  --accent-color: #0077FF;
+  --header-color: #333333;
+  --text-color: #333333;
+}
+
+html[data-theme='dark'] {
+  --body-background: #333333;
+  --container-background: #434343;
+  --accent-color: #3694FF;
+  --header-color: #3694FF;
+  --text-color: #B5B5B5;
+}
+
 body {
-  background: #1d1d1d;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  background: var(--body-background);
 }
 
 .simple-table {
-  background: #262626;
+  background: var(--container-background);
   width: 80%;
   margin: 20px auto;
   min-width: 280px;
@@ -29,7 +55,7 @@ body {
 }
 
 .simple-table table tbody tr {
-  color: #289dcc;
+  color: var(--accent-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,7 +66,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  border-bottom: 1px dashed #cccccc;
+  border-bottom: 1px dashed var(--text-color);
 }
 
 .simple-table table tbody td {
@@ -48,7 +74,7 @@ body {
 }
 
 .simple-table table tbody td:first-child {
-  color: #cccccc;
+  color: var(--text-color);
 }
 
 .simple-table table tbody td:first-child:before {
@@ -56,7 +82,7 @@ body {
   display: block;
   width: 5px;
   height: 5px;
-  background-color: #289dcc;
+  background-color: var(--accent-color);
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -69,5 +95,59 @@ body {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked + label {
+  background: var(--accent-color);
+}
+
+input[type=checkbox]:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+label:active:after {
+  width: 45px;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  -webkit-transition: all 400ms !important;
+  transition: all 400ms !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" data-theme="light">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+		<div class="toggle-container">
+			<input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+		</div>
 		<div class="simple-table">
 			<table>
 				<thead>
@@ -56,5 +59,26 @@
 				</tbody>
 			</table>
 		</div>
+
+		<script>
+			var checkbox = document.querySelector('input[name=theme]');
+
+			checkbox.addEventListener('change', function () {
+				if (this.checked) {
+					trans()
+					document.documentElement.setAttribute('data-theme', 'dark')
+				} else {
+					trans()
+					document.documentElement.setAttribute('data-theme', 'light')
+				}
+			})
+
+			let trans = () => {
+				document.documentElement.classList.add('transition');
+				window.setTimeout(() => {
+					document.documentElement.classList.remove('transition')
+				}, 1000)
+			}
+		</script>
 	</body>
 </html>
