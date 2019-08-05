@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/typography-style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+    <title>My Typography</title>
+</head>
+<body>
+    <section class="typography-one">
+        <div class="toggle-container">
+            <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+        </div>
+        <h1>h1. Heading</h1>
+        <h2>h2. Heading</h2>
+        <h3>h3. Heading</h3>
+        <h4>h4. Heading</h4>
+        <h5>h5. Heading</h5>
+
+        <p class="body-one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque rem iure expedita sed accusamus repellendus saepe reiciendis et vel. Quis nisi, neque delectus nostrum labore perferendis eligendi quam laborum possimus veritatis aut corrupti inventore enim ad, tenetur quia? Nemo accusamus molestias, repellendus nisi esse doloremque a laborum tenetur aut ipsam excepturi, iste distinctio odio? Officiis ipsum numquam cupiditate odio quibusdam amet corporis magni neque, pariatur error ducimus iure? Necessitatibus, beatae quo! Minima quam fugit ipsum voluptates nam dolorem, reprehenderit quos?</p>
+
+        <p class="body-two">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis impedit distinctio ut aperiam placeat nesciunt aut. Distinctio voluptas, ducimus eos ipsam ad neque nulla assumenda impedit cum ut quia accusamus itaque qui perspiciatis dolor unde laboriosam cupiditate minus sunt molestias. Error tempora voluptas accusamus explicabo, consequatur qui dolor nostrum eos perspiciatis aliquid eveniet quisquam. Temporibus perferendis porro doloribus, quo vitae consequuntur voluptatum molestiae voluptas voluptates, maxime ea illum alias quibusdam a quidem facere dolorum, iure iste consequatur deserunt earum! Itaque.</p>
+        <!-- <span class="button">BUTTON</span> -->
+        <!-- <span class="caption">caption text</span> -->
+    </section>
+
+    <script>
+    var checkbox = document.querySelector('input[name=theme]');
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition')
+            }, 1000)
+        }
+    </script>
+</body>
+</html>
