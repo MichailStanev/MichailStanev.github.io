@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" data-theme="light">
+<html class="no-js" data-theme="dark">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,13 +8,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Place favicon.ico in the root directory -->
 		
-		<link rel="stylesheet" href="css/normalize.css">
+		<!-- <link rel="stylesheet" href="css/normalize.css"> -->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+		<div class="nav-bar">
+			<div class="header">
+				<div class="hamburger">
+					<span>Burger Menu</span>
+				</div>
+			</div>
+			<div class="elements">
+				<span><a href="#">Startseite</a></span>
+				<span><a href="#">Novoline</a></span>
+				<span><a href="#">Merkur</a></span>
+				<span><a href="#">NetEnt</a></span>
+			</div>
+		</div>
+
 		<div class="toggle-container">
 			<input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
 		</div>
+
 		<div class="simple-table">
 			<table>
 				<thead>
@@ -60,11 +75,31 @@
 			</table>
 		</div>
 
+		<div class="table-2">
+			<span class="logo">
+				888 Ladies
+			</span>
+			<ul>
+				<li>112 Bingo Rooms</li>
+				<li>640 Other Casino Games</li>
+				<li>Exclusive Coronation Str</li>
+			</ul>
+			<div>
+				<span>Available for:</span>
+				<span class="systems">
+					<i>Andoid</i>
+					<i>IOS</i>
+					<i>NoIdea</i>
+				</span>
+			</div>
+			<a href="#">Play Mobile Bingo!</a>
+		</div>
+
 		<script>
 			var checkbox = document.querySelector('input[name=theme]');
 
 			checkbox.addEventListener('change', function () {
-				if (this.checked) {
+				if (!this.checked) {
 					trans()
 					document.documentElement.setAttribute('data-theme', 'dark')
 				} else {
@@ -79,6 +114,22 @@
 					document.documentElement.classList.remove('transition')
 				}, 1000)
 			}
+
+			(function () {
+					var hamburger = {
+						navToggle: document.querySelector('.header'),
+						nav: document.querySelector('.elements'),
+
+						doToggle: function (e) {
+							e.preventDefault();
+							this.navToggle.classList.toggle('expanded');
+							this.nav.classList.toggle('expanded');
+						}
+					};
+
+					hamburger.navToggle.addEventListener('click', function (e) { hamburger.doToggle(e); });
+				}());
+
 		</script>
 	</body>
 </html>
