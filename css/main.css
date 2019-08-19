@@ -284,6 +284,7 @@ html.transition *:after {
 
 .simple-table table tbody td {
   padding: 10px;
+  text-align: end;
 }
 
 .simple-table table tbody td:first-child {
