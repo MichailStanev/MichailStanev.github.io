@@ -98,6 +98,10 @@ html.transition *:after {
   cursor: pointer;
 }
 
+.nav-bar .header:hover span, .nav-bar .header:hover span::after, .nav-bar .header:hover span::before {
+  background-color: var(--accent-color);
+}
+
 .nav-bar .header span {
   position: absolute;
   left: 50%;
@@ -181,6 +185,8 @@ html.transition *:after {
 }
 
 .nav-bar .elements.expanded {
+  -webkit-transition: 400ms;
+  transition: 400ms;
   height: auto;
   opacity: 1;
   visibility: visible;
@@ -197,7 +203,7 @@ html.transition *:after {
   font-weight: 600;
   letter-spacing: 5px;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: uppercase;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -209,6 +215,8 @@ html.transition *:after {
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--text-color);
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .nav-bar .elements span:hover a {
